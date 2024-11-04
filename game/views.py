@@ -15,8 +15,7 @@ def process_money(request):
         request.session['score'] += rand_farm
         request.session['message'].insert(0,f'Earned {rand_farm} golds from the farm!')
         request.session['count'] += 1
-
-
+        
     if request.POST['building'] == 'cave':
         rand_cave = randrange(5,10,1)
         request.session['score'] += rand_cave
@@ -34,7 +33,7 @@ def process_money(request):
         request.session['score'] += request.session['rand_casino']
         request.session['message'].insert(0,f'Earned {request.session['rand_casino']} golds from the casino!')
         request.session['count'] += 1
-        
+
     return redirect('/')
 
 def destroy_session(request):
