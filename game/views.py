@@ -29,9 +29,9 @@ def process_money(request):
         request.session['count'] += 1
 
     if request.POST['building'] == 'casino':
-        request.session['rand_casino'] = randrange(-50,50,1)
-        request.session['score'] += request.session['rand_casino']
-        request.session['message'].insert(0,f'Earned {request.session['rand_casino']} golds from the casino!')
+        rand_casino = randrange(-50,50,1)
+        request.session['score'] += rand_casino
+        request.session['message'].insert(0,f'Earned {rand_casino} golds from the casino!')
         request.session['count'] += 1
 
     return redirect('/')
